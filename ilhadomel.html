@@ -115,7 +115,37 @@
   .cta-reserva svg.icone-zap { width:22px; height:22px; }
 
   footer { background:var(--texto); color:#9C9284; text-align:center; font-family:'Geologica',sans-serif; font-size:12.5px; padding:24px 0 36px; border-top:1px solid rgba(245,237,225,0.1); }
+/* Estilo do Botão Flutuante do WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  width: 56px;
+  height: 56px;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 2px 4px 14px rgba(0, 0, 0, 0.4);
+}
 </style>
+<link rel="icon" type="image/png" href="icone-logo.png">
 </head>
 <body>
 
@@ -242,6 +272,12 @@
   window.addEventListener('load', ajustarLogotipos);
   var t; window.addEventListener('resize', function(){ clearTimeout(t); t = setTimeout(ajustarLogotipos, 150); });
 </script>
-
+<!-- Botão Flutuante do WhatsApp -->
+<a href="https://wa.me/5515981255038?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Ilha%20do%20Mel." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 0C7.163 0 0 7.163 0 16C0 18.825 0.735 21.579 2.13 24L0.27 30.81L7.26 28.98C9.615 30.285 12.285 31 16 31C24.837 31 32 23.837 32 15C32 6.163 24.837 0 16 0ZM16 28.5C12.75 28.5 9.735 27.57 7.185 25.95L6.765 25.7L2.61 26.79L3.72 22.755L3.45 22.32C1.695 19.53 0.75 16.275 0.75 12.885C0.75 4.545 7.59 0.75 16 0.75C24.41 0.75 31.25 7.59 31.25 16C31.25 24.41 24.41 28.5 16 28.5Z" fill="white"/>
+    <path d="M22.95 18.735C22.56 18.54 20.655 17.595 20.31 17.46C19.965 17.325 19.71 17.265 19.455 17.655C19.2 18.045 18.465 18.915 18.24 19.17C18.015 19.425 17.79 19.455 17.4 19.26C17.01 19.065 15.75 18.645 14.25 17.31C13.08 16.26 12.3 14.97 12.075 14.58C11.85 14.19 12.045 13.98 12.24 13.785C12.42 13.605 12.63 13.32 12.825 13.095C13.02 12.87 13.08 12.705 13.21 12.45C13.34 12.195 13.275 11.97 13.175 11.775C13.075 11.58 12.33 9.765 12.015 9.03C11.71 8.31 11.4 8.415 11.175 8.4C10.965 8.385 10.725 8.385 10.485 8.385C10.245 8.385 9.855 8.475 9.525 8.835C9.195 9.195 8.25 10.08 8.25 11.895C8.25 13.71 9.57 15.465 9.75 15.705C9.93 15.945 12.345 19.665 16.035 21.255C16.91 21.63 17.595 21.855 18.12 22.02C18.995 22.3 19.79 22.26 20.42 22.165C21.12 22.06 22.56 21.285 22.86 20.445C23.16 19.605 23.16 18.885 23.07 18.735H22.95Z" fill="white"/>
+  </svg>
+</a>
 </body>
 </html>

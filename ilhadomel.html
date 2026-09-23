@@ -222,7 +222,7 @@
   </div>
 </section>
 
-<!-- ==================== BLOCO "O QUE ESTÁ INCLUSO" (CORRIGIDO) ==================== -->
+<!-- ==================== BLOCO "O QUE ESTÁ INCLUSO" ==================== -->
 <section class="inclusos">
   <h3 class="inclusos__titulo">O que está incluso</h3>
 
@@ -266,23 +266,23 @@
       <li class="inclusos__item">
         <span class="inclusos__icone-wrap">
           <svg class="inclusos__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 20a6 6 0 0 0 20 0"/>
+            <path d="M4 14l8-8 8 8"/>
+            <path d="M12 6v12"/>
+          </svg>
+        </span>
+        <span><strong>Balsa</strong> (ida e volta)</span>
+      </li>
+
+      <li class="inclusos__item">
+        <span class="inclusos__icone-wrap">
+          <svg class="inclusos__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 8l8-4 8 4-8 4-8-4z"/>
             <path d="M4 8v8l8 4 8-4V8"/>
             <path d="M12 12v8"/>
           </svg>
         </span>
         <span><strong>Kit</strong> viagem</span>
-      </li>
-
-      <li class="inclusos__item">
-        <span class="inclusos__icone-wrap">
-          <svg class="inclusos__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 17h18"/>
-            <path d="M5 17V9l7-4 7 4v8"/>
-            <path d="M9 17v-5h6v5"/>
-          </svg>
-        </span>
-        <span><strong>Passeio</strong> de balsa</span>
       </li>
 
     </ul>
@@ -300,8 +300,9 @@
     clear: both !important;
   }
   .inclusos__titulo {
-    color: #1b3a5c !important;
-    font-weight: 800 !important;
+    color: var(--azul) !important;
+    font-family: 'Geologica', sans-serif !important;
+    font-weight: 700 !important;
     font-size: 1.5rem !important;
     margin: 0 0 1.2rem 0 !important;
     text-align: left !important;
@@ -344,11 +345,10 @@
     color: #33322e !important;
   }
   .inclusos__item strong {
-    color: #1b3a5c !important;
+    color: var(--azul) !important;
   }
 </style>
 <!-- ============================================================================== -->
-
 <!-- SEÇÃO DA GALERIA DE FOTOS -->
 <section class="galeria-roteiro">
   <div class="wrap">

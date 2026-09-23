@@ -205,7 +205,126 @@
         </div>
       </div>
     </div>
+<!-- Bloco "O que está incluso" — v2, combinando com a identidade visual do site -->
+<section class="inclusos">
+  <h3 class="inclusos__titulo">O que está incluso</h3>
 
+  <div class="inclusos__caixa">
+    <ul class="inclusos__lista">
+
+      <li class="inclusos__item">
+        <span class="inclusos__icone-wrap">
+          <svg class="inclusos__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="8" r="3"/>
+            <circle cx="16" cy="8" r="3"/>
+            <path d="M2 20c0-3 2.5-5 6-5s6 2 6 5"/>
+            <path d="M10 20c0-3 2.5-5 6-5s6 2 6 5"/>
+          </svg>
+        </span>
+        <span><strong>2 guias</strong> Rumo</span>
+      </li>
+
+      <li class="inclusos__item">
+        <span class="inclusos__icone-wrap">
+          <svg class="inclusos__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21c0-4.5 3.5-7 8-7s8 2.5 8 7"/>
+          </svg>
+        </span>
+        <span><strong>Guia regional</strong> receptivo</span>
+      </li>
+
+      <li class="inclusos__item">
+        <span class="inclusos__icone-wrap">
+          <svg class="inclusos__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="6" width="18" height="11" rx="2"/>
+            <path d="M3 12h18"/>
+            <circle cx="7.5" cy="17" r="1.6"/>
+            <circle cx="16.5" cy="17" r="1.6"/>
+          </svg>
+        </span>
+        <span><strong>Ônibus</strong> semi-leito</span>
+      </li>
+
+      <li class="inclusos__item">
+        <span class="inclusos__icone-wrap">
+          <svg class="inclusos__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 8l8-4 8 4-8 4-8-4z"/>
+            <path d="M4 8v8l8 4 8-4V8"/>
+            <path d="M12 12v8"/>
+          </svg>
+        </span>
+        <span><strong>Kit</strong> viagem</span>
+      </li>
+
+      <li class="inclusos__item">
+        <span class="inclusos__icone-wrap">
+          <svg class="inclusos__icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 17h18"/>
+            <path d="M5 17V9l7-4 7 4v8"/>
+            <path d="M9 17v-5h6v5"/>
+          </svg>
+        </span>
+        <span><strong>Passeio</strong> de balsa</span>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<style>
+  .inclusos {
+    font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+    max-width: 640px;
+    margin: 2rem auto;
+  }
+  .inclusos__titulo {
+    color: #1b3a5c;
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin: 0 0 1.2rem;
+  }
+  .inclusos__caixa {
+    background: #ede2c9;
+    border-radius: 18px;
+    padding: 1.5rem 1.75rem;
+  }
+  .inclusos__lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem 1.5rem;
+  }
+  .inclusos__item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .inclusos__icone-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #e8622c;
+  }
+  .inclusos__icone {
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+  }
+  .inclusos__item span:last-child {
+    font-size: 0.98rem;
+    color: #33322e;
+  }
+  .inclusos__item strong {
+    color: #1b3a5c;
+  }
+</style>
     <div class="card-info">
       <div class="preco">R$ 499,90</div>
       <div class="preco-legenda">Valor por pessoa · à vista</div>

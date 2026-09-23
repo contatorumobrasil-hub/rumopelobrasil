@@ -256,12 +256,38 @@
   }
 </style>
 
+<style>
+  /* Garante que a imagem preencha 100% da altura e largura do frame original */
+  .galeria-grid .foto-frame .conteudo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .galeria-grid .foto-frame img.foto-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  /* Mantém o texto por cima da imagem */
+  .galeria-grid .foto-frame .rotulo-foto {
+    position: relative;
+    z-index: 2;
+  }
+</style>
+
 <div class="galeria-grid">
 
   <!-- Foto 1 - Embarque -->
   <div class="foto-frame duo-1">
     <div class="conteudo">
-      <img src="ChatGPT Image 23 de set. de 2026, 05_00_39.png" alt="Embarque">
+      <img src="ChatGPT Image 23 de set. de 2026, 05_00_39.png" alt="Embarque" class="foto-bg">
       <span class="rotulo-foto">Embarque</span>
     </div>
   </div>
@@ -269,7 +295,7 @@
   <!-- Foto 2 - Balsa -->
   <div class="foto-frame duo-2">
     <div class="conteudo">
-      <img src="ChatGPT Image 23 de set. de 2026, 04_57_15.png" alt="Balsa">
+      <img src="ChatGPT Image 23 de set. de 2026, 04_57_15.png" alt="Balsa" class="foto-bg">
       <span class="rotulo-foto">Balsa</span>
     </div>
   </div>
@@ -277,7 +303,7 @@
   <!-- Foto 3 - Praia -->
   <div class="foto-frame duo-3">
     <div class="conteudo">
-      <img src="ChatGPT Image 23 de set. de 2026, 04_36_24.png" alt="Praia">
+      <img src="ChatGPT Image 23 de set. de 2026, 04_36_24.png" alt="Praia" class="foto-bg">
       <span class="rotulo-foto">Praia</span>
     </div>
   </div>
@@ -285,15 +311,15 @@
   <!-- Foto 4 - Trilha -->
   <div class="foto-frame duo-4">
     <div class="conteudo">
-      <img src="ChatGPT Image 23 de set. de 2026, 04_34_53.png" alt="Trilha">
+      <img src="ChatGPT Image 23 de set. de 2026, 04_34_53.png" alt="Trilha" class="foto-bg">
       <span class="rotulo-foto">Trilha</span>
     </div>
   </div>
 
-  <!-- Foto 5 - Festa -->
+  <!-- Foto 5 - Lanche / Festa -->
   <div class="foto-frame duo-1">
     <div class="conteudo">
-      <img src="ChatGPT Image 23 de set. de 2026, 04_33_28.png" alt="Festa">
+      <img src="ChatGPT Image 23 de set. de 2026, 04_33_28.png" alt="Festa" class="foto-bg">
       <span class="rotulo-foto">Festa</span>
     </div>
   </div>
@@ -301,16 +327,25 @@
   <!-- Foto 6 - Pôr do sol -->
   <div class="foto-frame duo-3">
     <div class="conteudo">
-      <img src="ChatGPT Image 23 de set. de 2026, 04_26_36.png" alt="Pôr do sol">
+      <img src="ChatGPT Image 23 de set. de 2026, 04_28_07.png" alt="Pôr do sol" class="foto-bg">
       <span class="rotulo-foto">Pôr do sol</span>
     </div>
   </div>
 
-  <!-- Foto 7 - Mirante (Nova Foto) -->
+  <!-- Foto 7 - Farol das Conchas -->
   <div class="foto-frame duo-2">
     <div class="conteudo">
-      <img src="ChatGPT Image 20 de set. de 2026, 03_36_58.png" alt="Farol das Conchas">
+      <img src="ChatGPT Image 23 de set. de 2026, 04_26_36.png" alt="Farol das Conchas" class="foto-bg">
       <span class="rotulo-foto">Farol das Conchas</span>
+    </div>
+  </div>
+
+  <!-- Foto 8 - (Nova foto adicionada para fechar o par) -->
+  <div class="foto-frame duo-4">
+    <div class="conteudo">
+      <!-- 🟢 COLOQUE O LINK DA SUA 8ª FOTO ABAIXO -->
+      <img src="https://contatorumobrasil.workers.dev/ilh-farol.webp" alt="Mirante" class="foto-bg">
+      <span class="rotulo-foto">Mirante</span>
     </div>
   </div>
 

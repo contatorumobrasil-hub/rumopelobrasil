@@ -190,7 +190,7 @@
         <p>O grupo sai na madrugada de Domingo de Sorocaba, chega na manhã já pronto pra aproveitar o dia inteiro na ilha, e volta no domingo à tarde — pensado pra quem trabalha em CLT e não quer perder a segunda-feira.</p>
       </div>
 
-      <div class="bloco">
+<div class="bloco">
         <span class="rotulo">Como funciona</span>
         <h2 style="color:var(--azul); font-family: 'Geologica', sans-serif; font-weight: 700;">Roteiro, hora a hora</h2>
         <div class="lista-detalhes">
@@ -221,7 +221,8 @@
     </div>
   </div>
 </section>
-<!-- Bloco "O que está incluso" — v2 -->
+
+<!-- ==================== BLOCO "O QUE ESTÁ INCLUSO" (CORRIGIDO) ==================== -->
 <section class="inclusos">
   <h3 class="inclusos__titulo">O que está incluso</h3>
 
@@ -291,10 +292,12 @@
 <style>
   .inclusos {
     font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif !important;
-    max-width: 640px !important;
-    margin: 2rem auto !important;
-    padding: 0 1rem !important;
+    max-width: 1100px !important;
+    margin: 3rem auto !important;
+    padding: 0 1.5rem !important;
     box-sizing: border-box !important;
+    display: block !important;
+    clear: both !important;
   }
   .inclusos__titulo {
     color: #1b3a5c !important;
@@ -313,7 +316,7 @@
     margin: 0 !important;
     padding: 0 !important;
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
     gap: 1rem 1.5rem !important;
   }
   .inclusos__item {
@@ -344,6 +347,9 @@
     color: #1b3a5c !important;
   }
 </style>
+<!-- ============================================================================== -->
+
+<!-- SEÇÃO DA GALERIA DE FOTOS -->
 <section class="galeria-roteiro">
   <div class="wrap">
     <div class="bloco" style="margin-bottom:32px;">
@@ -351,130 +357,115 @@
       <h2 style="color:var(--azul); font-family:'Geologica', sans-serif; font-weight: 700;">Fotos e vídeos do roteiro</h2>
       <p>Assim que a viagem acontecer, essa galeria ganha fotos e vídeos reais da Ilha do Mel.</p>
     </div>
-    <!-- ESTILO DA GALERIA (Mantido para 7 fotos de forma harmoniosa) -->
-<style>
-  .galeria-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
-    gap: 16px !important;
-  }
 
-  /* Em telas de computador (acima de 768px), organiza em 4 colunas */
-  @media (min-width: 768px) {
-    .galeria-grid {
-      grid-template-columns: repeat(4, 1fr) !important;
-    }
-  }
+    <style>
+      .galeria-grid {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+        gap: 16px !important;
+      }
 
-  /* Garante que a foto preencha bem o espaço sem distorcer e mantém os estilos de borda/sombra originais */
-  .foto-frame {
-    position: relative;
-    overflow: hidden;
-    /* Adicione aqui qualquer estilo de borda, sombra ou borda arredondada que já existia no seu CSS original para o foto-frame */
-  }
+      @media (min-width: 768px) {
+        .galeria-grid {
+          grid-template-columns: repeat(4, 1fr) !important;
+        }
+      }
 
-  .foto-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-</style>
+      .galeria-grid .foto-frame {
+        position: relative;
+        overflow: hidden;
+      }
 
-<style>
-  /* Garante que a imagem preencha 100% da altura e largura do frame original */
-  .galeria-grid .foto-frame .conteudo {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
+      .galeria-grid .foto-frame .conteudo {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
 
-  .galeria-grid .foto-frame img.foto-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-  }
+      .galeria-grid .foto-frame img.foto-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        z-index: 1;
+      }
 
-  /* Mantém o texto por cima da imagem */
-  .galeria-grid .foto-frame .rotulo-foto {
-    position: relative;
-    z-index: 2;
-  }
-</style>
+      .galeria-grid .foto-frame .rotulo-foto {
+        position: relative;
+        z-index: 2;
+      }
+    </style>
 
-<div class="galeria-grid">
+    <div class="galeria-grid">
+      <!-- Foto 1 -->
+      <div class="foto-frame duo-1">
+        <div class="conteudo">
+          <img src="ChatGPT Image 23 de set. de 2026, 05_38_24.png" alt="Embarque" class="foto-bg">
+          <span class="rotulo-foto"></span>
+        </div>
+      </div>
 
-  <!-- Foto 1 - Embarque -->
-  <div class="foto-frame duo-1">
-    <div class="conteudo">
-      <img src="ChatGPT Image 23 de set. de 2026, 05_38_24.png" alt="Embarque" class="foto-bg">
-      <span class="rotulo-foto"></span>
+      <!-- Foto 2 -->
+      <div class="foto-frame duo-2">
+        <div class="conteudo">
+          <img src="ChatGPT Image 23 de set. de 2026, 04_57_15.png" alt="Balsa" class="foto-bg">
+          <span class="rotulo-foto"></span>
+        </div>
+      </div>
+
+      <!-- Foto 3 -->
+      <div class="foto-frame duo-3">
+        <div class="conteudo">
+          <img src="ChatGPT Image 23 de set. de 2026, 04_36_24.png" alt="Praia" class="foto-bg">
+          <span class="rotulo-foto"></span>
+        </div>
+      </div>
+
+      <!-- Foto 4 -->
+      <div class="foto-frame duo-4">
+        <div class="conteudo">
+          <img src="ChatGPT Image 23 de set. de 2026, 04_34_53.png" alt="Trilha" class="foto-bg">
+          <span class="rotulo-foto"></span>
+        </div>
+      </div>
+
+      <!-- Foto 5 -->
+      <div class="foto-frame duo-1">
+        <div class="conteudo">
+          <img src="ChatGPT Image 23 de set. de 2026, 04_33_28.png" alt="Festa" class="foto-bg">
+          <span class="rotulo-foto"></span>
+        </div>
+      </div>
+
+      <!-- Foto 6 -->
+      <div class="foto-frame duo-3">
+        <div class="conteudo">
+          <img src="ChatGPT Image 23 de set. de 2026, 04_28_07.png" alt="Pôr do sol" class="foto-bg">
+          <span class="rotulo-foto"></span>
+        </div>
+      </div>
+
+      <!-- Foto 7 -->
+      <div class="foto-frame duo-2">
+        <div class="conteudo">
+          <img src="ChatGPT Image 23 de set. de 2026, 04_26_36.png" alt="Farol das Conchas" class="foto-bg">
+          <span class="rotulo-foto"></span>
+        </div>
+      </div>
+
+      <!-- Foto 8 -->
+      <div class="foto-frame duo-4">
+        <div class="conteudo">
+          <img src="ChatGPT Image 23 de set. de 2026, 05_00_39.png" alt="Mirante" class="foto-bg">
+          <span class="rotulo-foto"></span>
+        </div>
+      </div>
     </div>
   </div>
-
-  <!-- Foto 2 - Balsa -->
-  <div class="foto-frame duo-2">
-    <div class="conteudo">
-      <img src="ChatGPT Image 23 de set. de 2026, 04_57_15.png" alt="Balsa" class="foto-bg">
-      <span class="rotulo-foto"></span>
-    </div>
-  </div>
-
-  <!-- Foto 3 - Praia -->
-  <div class="foto-frame duo-3">
-    <div class="conteudo">
-      <img src="ChatGPT Image 23 de set. de 2026, 04_36_24.png" alt="Praia" class="foto-bg">
-      <span class="rotulo-foto"></span>
-    </div>
-  </div>
-
-  <!-- Foto 4 - Trilha -->
-  <div class="foto-frame duo-4">
-    <div class="conteudo">
-      <img src="ChatGPT Image 23 de set. de 2026, 04_34_53.png" alt="Trilha" class="foto-bg">
-      <span class="rotulo-foto"></span>
-    </div>
-  </div>
-
-  <!-- Foto 5 - Lanche / Festa -->
-  <div class="foto-frame duo-1">
-    <div class="conteudo">
-      <img src="ChatGPT Image 23 de set. de 2026, 04_33_28.png" alt="Festa" class="foto-bg">
-      <span class="rotulo-foto"></span>
-    </div>
-  </div>
-
-  <!-- Foto 6 - Pôr do sol -->
-  <div class="foto-frame duo-3">
-    <div class="conteudo">
-      <img src="ChatGPT Image 23 de set. de 2026, 04_28_07.png" alt="Pôr do sol" class="foto-bg">
-      <span class="rotulo-foto"></span>
-    </div>
-  </div>
-
-  <!-- Foto 7 - Farol das Conchas -->
-  <div class="foto-frame duo-2">
-    <div class="conteudo">
-      <img src="ChatGPT Image 23 de set. de 2026, 04_26_36.png" alt="Farol das Conchas" class="foto-bg">
-      <span class="rotulo-foto"></span>
-    </div>
-  </div>
-
-  <!-- Foto 8 - (Nova foto adicionada para fechar o par) -->
-  <div class="foto-frame duo-4">
-    <div class="conteudo">
-      <!-- 🟢 COLOQUE O LINK DA SUA 8ª FOTO ABAIXO -->
-      <img src="ChatGPT Image 23 de set. de 2026, 05_00_39.png" alt="Mirante" class="foto-bg">
-      <span class="rotulo-foto"></span>
-    </div>
-  </div>
-
-</div>
 </section>
 
 <section class="cta-reserva" id="reservar">

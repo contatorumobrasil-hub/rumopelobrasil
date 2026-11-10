@@ -268,7 +268,7 @@
 
   /* ===== GALERIA ===== */
   .galeria { padding: 20px 0 110px; }
-  .galeria-faixa { display:flex; gap:20px; overflow-x:auto; padding: 26px 4px 16px; scrollbar-width: none; }
+  .galeria-faixa { display:flex; gap:20px; overflow-x:auto; padding: 26px 32px 84px; margin: 0 -32px -68px; scrollbar-width: none; }
   .galeria-faixa::-webkit-scrollbar { display:none; }
   .galeria-item { flex: 0 0 auto; width: 190px; aspect-ratio: 3/4; }
   .galeria-item:nth-child(even) { transform: translateY(18px); }
@@ -326,6 +326,59 @@
   box-shadow: 2px 4px 14px rgba(0, 0, 0, 0.4);
 }
 </style>
+<style>
+/* ===== Agenda + destaque (mesmo conteúdo do agenda.css) ===== */
+/* Agenda da Temporada + Destino em destaque — usa as cores e fontes já existentes do site */
+.hero-grid.dest-horizontal { grid-template-columns: 1fr; }
+.dest-video { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 26px; overflow: hidden; background: var(--creme-escuro); box-shadow: 0 14px 32px rgba(23,20,15,0.16); }
+.dest-video video { width: 100%; height: 100%; object-fit: cover; display: block; border: 0; }
+.dest-sem-video { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--creme); font-size: clamp(32px, 6vw, 64px); }
+.dest-info { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 28px; }
+.dest-info h2 { font-size: clamp(28px, 4vw, 44px); color: var(--azul); }
+.dest-info h2 span { color: var(--terracota); }
+.dest-info p { font-size: 15px; color: var(--texto-suave); max-width: 560px; margin-top: 8px; }
+
+.agenda-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap: 24px; }
+.ag-card { background: var(--creme-escuro); border-radius: 26px; overflow: hidden; box-shadow: 0 14px 30px rgba(23,20,15,0.1); transition: transform .3s ease; display: flex; flex-direction: column; }
+.ag-card:hover { transform: translateY(-6px); }
+.ag-foto { position: relative; display: block; aspect-ratio: 4/3; background-size: cover; background-position: center; text-decoration: none; }
+.ag-foto::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,.12) 55%, rgba(0,0,0,0) 100%); }
+.ag-titulo { position: absolute; left: 18px; right: 18px; bottom: 16px; z-index: 2; font-size: clamp(24px, 2.6vw, 32px); line-height: .98; color: var(--creme); text-shadow: 2px 2px 0.35px rgba(0,0,0,0.35); }
+.ag-titulo span { display: block; }
+.ag-titulo .cor-amarelo { color: var(--amarelo); }
+.ag-titulo .cor-vermelho { color: var(--terracota); }
+.ag-topo { position: absolute; top: 16px; left: 16px; right: 16px; z-index: 3; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; }
+.ag-datachip { background: #fff; color: var(--azul); font-family: 'Geologica', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: .05em; padding: 8px 13px; border-radius: 999px; white-space: nowrap; box-shadow: 0 6px 14px rgba(23,20,15,.2); }
+.ag-status { margin-left: auto; font-family: 'Geologica', sans-serif; font-weight: 800; font-size: 12px; letter-spacing: .05em; padding: 9px 15px; border-radius: 999px; transform: rotate(4deg); box-shadow: 0 8px 16px rgba(23,20,15,.25); }
+.ag-aberta { background: var(--verde); color: var(--creme); }
+.ag-ultimas { background: var(--amarelo); color: var(--azul); }
+.ag-esgotado { background: var(--creme); color: var(--texto-suave); }
+.ag-adiada { background: var(--terracota); color: var(--creme); }
+.ag-corpo { padding: 20px 20px 22px; display: flex; flex-direction: column; flex: 1; }
+.ag-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 12px; }
+.ag-tag { font-family: 'Geologica', sans-serif; font-weight: 800; font-size: 11.5px; letter-spacing: .05em; padding: 6px 12px; border-radius: 999px; white-space: nowrap; }
+.ag-uf { background: var(--verde); color: var(--creme); }
+.ag-dur { background: var(--azul); color: var(--creme); }
+.ag-item { font-family: 'Geologica', sans-serif; font-size: 13px; color: var(--texto-suave); padding-left: 18px; position: relative; margin-bottom: 12px; }
+.ag-item::before { content: ""; position: absolute; left: 0; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--terracota); }
+.ag-item strong { color: var(--azul); font-weight: 700; }
+.ag-mod { font-size: 14px; color: var(--texto-suave); margin-bottom: 12px; }
+.ag-rodape { margin-top: auto; padding-top: 10px; display: flex; flex-direction: column; gap: 12px; }
+.ag-valor { font-family: 'Geologica', sans-serif; font-weight: 900; font-size: 22px; color: var(--terracota); line-height: 1.1; }
+.ag-valor small { display: block; font-weight: 600; font-size: 11.5px; letter-spacing: .04em; text-transform: uppercase; color: var(--texto-suave); }
+.ag-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--verde); color: var(--creme); border-radius: 999px; padding: 13px 18px; font-family: 'Geologica', sans-serif; font-weight: 800; font-size: 13px; text-decoration: none; box-shadow: 0 4px 0 #1F5C39; transition: transform .2s ease; }
+.ag-btn:hover { transform: translateY(-3px); }
+.ag-embreve { background: transparent; border: 2.5px dashed var(--linha); box-shadow: none; justify-content: center; }
+.ag-embreve:hover { transform: none; }
+.ag-nome { font-size: clamp(24px, 2.6vw, 32px); line-height: .98; color: var(--texto-suave); margin-bottom: 12px; }
+.ag-nome span { display: block; color: var(--texto-suave); }
+.ag-mais { text-align: center; margin-top: 40px; }
+.ag-pagina { padding: 56px 0 90px; }
+.ag-head { margin: 24px 0 40px; max-width: 640px; }
+.ag-head h1 { font-size: clamp(34px, 6vw, 56px); color: var(--azul); margin: 8px 0 12px; }
+.ag-head p { color: var(--texto-suave); font-size: 16px; }
+@media (max-width: 600px) { .dest-info { flex-direction: column; align-items: flex-start; } }
+</style>
 </head>
 <body>
 
@@ -341,7 +394,7 @@
     <div class="nav-links">
       <a href="#home">Home</a>
       <a href="#sobre">Sobre</a>
-      <a href="#roteiros">Roteiros</a>
+      <a href="agenda.html">Agenda</a>
       <a href="#galeria">Galeria</a>
       <a href="#contato">Contato</a>
     </div>
@@ -383,7 +436,7 @@
       <p class="hero-tagline">Viver é melhor quando a experiência é compartilhada.</p>
 
       <div class="hero-botoes">
-        <a href="#roteiros" class="btn btn-terracota">Ver próximos destinos</a>
+        <a href="agenda.html" class="btn btn-terracota">Conheça nossa agenda</a>
         <a href="#sobre" class="btn btn-outline">Conhecer a Rumo</a>
       </div>
 
@@ -394,15 +447,7 @@
       </div>
     </div>
 
-    <div class="hero-foto-wrap reveal">
-      <div class="hero-foto insta-embed">
-  <video src="WhatsApp Video 2026-11-08 at 23.08.20.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: block; border: 0;">
-    Seu navegador não suporta a exibição deste vídeo.
-  </video>
-</div>
-      <span class="sticker hero-sticker-1">✦ Próximo destino</span>
-      <span class="sticker hero-sticker-2">Angra dos Reis</span>
-    </div>
+    <div class="hero-foto-wrap reveal" id="destaque"><div class="hero-foto insta-embed"><video src="snapinsta-1788302359004.mp4" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;border:0;"></video></div><span class="sticker hero-sticker-1">✦ DESTINO EM DESTAQUE</span><span class="sticker hero-sticker-2">Angra dos Reis — RJ</span></div>
   </div>
 
   <svg class="divisor" viewBox="0 0 1440 130" preserveAspectRatio="none">
@@ -448,73 +493,12 @@
 <section class="roteiros" id="roteiros">
   <div class="wrap">
     <div class="roteiros-head reveal">
-      <span class="rotulo">Roteiros</span>
-      <h2 class="display">Próximas paradas</h2>
-      <p>Cada viagem é uma parada no nosso mapa. Confira o que está a caminho e fique de olho nas novas datas.</p>
+      <span class="rotulo">Agenda</span>
+      <h2 class="display">Agenda da Temporada</h2>
+      <p>Uma seleção de destinos e experiências para viver o Brasil de um jeito diferente.</p>
     </div>
-
-  <div class="cards-roteiro">
-    
-
-      <div class="card-roteiro reveal">
-        <!-- Aplicamos o degradê preto transparente junto com a foto de fundo -->
-        <div class="card-foto duo-1" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%), url('Letreiro de Angra dos Reis no Pier.png'); background-size: cover; background-position: center;">
-          <svg class="grao"><filter id="n4"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n4)"/></svg>
-          <a href="angra.html" class="titulo-sobre-foto" style="display:block;">
-            <h3 class="display" style="text-shadow: 2px 2px 0.35px rgba(0,0,0,0.35); color: #FFFFFF;">Angra dos<span class="linha2" style="color: rgb(236, 88, 53);">Reis</span></h3>
-          </a>
-          <span class="card-tag-preco">Próximo destino</span>
-        </div>
-        <div class="card-corpo">
-          <div class="flyer-local">Angra dos Reis, Rio de Janeiro</div>
-          <p class="desc">O próximo rumo da Rumo pelo Brasil é Angra dos Reis, no litoral sul do Rio de Janeiro. Ainda estamos definindo a data — fale com a gente para ser avisado em primeira mão.</p>
-          <div class="card-detalhes">
-            <div class="item"><strong>Data:</strong> em definição</div>
-            <div class="item"><strong>Formato:</strong> bate e volta</div>
-            <div class="item"><strong>Roteiro e valores:</strong> em definição</div>
-          </div>
-          <a href="angra.html" class="flyer-whats">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12 H19 M13 6 L19 12 L13 18"/></svg>
-            Ver página do destino
-          </a>
-        </div>
-      </div>
-<div class="card-roteiro reveal">
-        <!-- Aplicamos o degradê preto transparente junto com a foto de fundo -->
-        <div class="card-foto duo-1" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%), url('ChatGPT Image 20 de set. de 2026, 03_36_58.png'); background-size: cover; background-position: center;">
-          <svg class="grao"><filter id="n4"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n4)"/></svg>
-          <a href="ilhadomel.html" class="titulo-sobre-foto" style="display:block;">
-            <h3 class="display" style="text-shadow: 2px 2px 0.35px rgba(0,0,0,0.35);">Ilha do<span class="linha2">Mel</span></h3>
-          </a>
-          <span class="card-tag-preco">Adiada · Nova data em breve</span>
-        </div>
-        <div class="card-corpo">
-          <div class="flyer-local">Ilha do Mel, Paraná</div>
-          <p class="desc">Viagem adiada: o domingão na Ilha do Mel foi remarcado e estamos definindo a nova data. Sem carros, cercada de trilhas, praias e aquele clima de vila de pescadores.</p>
-          <div class="card-detalhes">
-            <div class="item"><strong>Nova data:</strong> em definição</div>
-            <div class="item"><strong>Saída:</strong> domingo às 00h30, de Sorocaba (SP)</div>
-            <div class="item"><strong>Retorno:</strong> domingo, balsa das 17h–18h</div>
-            <div class="item"><strong>Formato:</strong> bate e volta - Domingão na ilha</div>
-          </div>
-          <a href="ilhadomel.html" class="flyer-whats">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12 H19 M13 6 L19 12 L13 18"/></svg>
-            Ver roteiro completo
-          </a>
-        </div>
-      </div>
-      <div class="card-roteiro em-breve reveal" style="grid-column: 1 / -1;">
-        <div class="card-corpo" style="padding-top:40px;">
-          <h3 class="display" style="color: var(--texto-suave);">Próximo <span class="linha2" style="color: var(--texto-suave);">RUMO</span></h3>
-          <div class="flyer-local" style="margin-top:14px;">Em breve</div>
-          <p class="desc">Depois de Angra dos Reis, já estamos desenhando os próximos rumos da Rumo pelo Brasil. Fale com a gente para ser avisado em primeira mão.</p>
-          <div class="card-detalhes">
-            <div class="item">Roteiro em curadoria</div>
-            <div class="item">Data e valores em definição</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="agenda-grid" id="agenda-home"><article class="ag-card"><a class="ag-foto duo-2" href="angra.html" aria-label="Angra dos Reis"><div class="ag-topo"><span class="ag-datachip">DATA EM DEFINIÇÃO</span></div><h3 class="ag-titulo display">Angra dos<span class="cor-vermelho">Reis</span></h3></a><div class="ag-corpo"><div class="ag-tags"><span class="ag-tag ag-uf">RJ</span><span class="ag-tag ag-dur">BATE E VOLTA</span></div><div class="ag-rodape"><div class="ag-valor"><small>Valor em definição</small></div><a class="ag-btn" href="angra.html">Conhecer roteiro <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12H19M13 6L19 12L13 18"/></svg></a></div></div></article><article class="ag-card"><a class="ag-foto" href="ilhadomel.html" style="background-image:url('ChatGPT%20Image%2020%20de%20set.%20de%202026,%2003_36_58.png')" aria-label="Ilha do Mel"><div class="ag-topo"><span class="ag-datachip">DATA EM DEFINIÇÃO</span><span class="ag-status ag-adiada">ADIADA</span></div><h3 class="ag-titulo display">Ilha do<span class="cor-amarelo">Mel</span></h3></a><div class="ag-corpo"><div class="ag-tags"><span class="ag-tag ag-uf">PR</span><span class="ag-tag ag-dur">BATE E VOLTA</span></div><div class="ag-item"><strong>Formato:</strong> bate e volta - Domingão na ilha</div><div class="ag-rodape"><div class="ag-valor">R$ 499,90<small>por pessoa</small></div><a class="ag-btn" href="ilhadomel.html">Conhecer roteiro <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12H19M13 6L19 12L13 18"/></svg></a></div></div></article><article class="ag-card"><a class="ag-foto duo-2" href="https://wa.me/5515981255038?text=Oi!%20Quero%20saber%20mais%20sobre%20a%20viagem%20para%20Trindade." target="_blank" rel="noopener" aria-label="Trindade"><div class="ag-topo"><span class="ag-datachip">DATA EM DEFINIÇÃO</span></div><h3 class="ag-titulo display">Trindade</h3></a><div class="ag-corpo"><div class="ag-tags"><span class="ag-tag ag-uf">RJ</span></div><div class="ag-rodape"><div class="ag-valor"><small>Valor em definição</small></div><a class="ag-btn" href="https://wa.me/5515981255038?text=Oi!%20Quero%20saber%20mais%20sobre%20a%20viagem%20para%20Trindade." target="_blank" rel="noopener">Conhecer roteiro <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12H19M13 6L19 12L13 18"/></svg></a></div></div></article><article class="ag-card ag-embreve"><div class="ag-corpo"><h3 class="ag-nome display">Próximo <span>rumo</span></h3><p class="ag-mod">Já estamos desenhando as próximas viagens. Fale com a gente para ser avisado em primeira mão.</p><div class="ag-rodape"><a class="ag-btn" href="https://wa.me/5515981255038" target="_blank" rel="noopener">Fale com a Rumo <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12H19M13 6L19 12L13 18"/></svg></a></div></div></article></div>
+    <div class="ag-mais"><a href="agenda.html" class="btn btn-terracota">Ver agenda completa</a></div>
   </div>
 </section>
 
@@ -638,5 +622,6 @@
 
 </body> <!-- Tag de fechamento da sua página -->
 </html>
+<script src="agenda.js"></script>
 </body>
 </html>

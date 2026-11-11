@@ -21,7 +21,6 @@ var RUMO = {
   destinos: [
     {
       id: 'angra-dos-reis', nome: 'Angra dos Reis', estado: 'RJ',
-            local: 'Angra dos Reis, Rio de Janeiro',
       descricao: 'O próximo rumo da Rumo pelo Brasil é Angra dos Reis, no litoral sul do Rio de Janeiro. Ainda estamos definindo a data — fale com a gente para ser avisado em primeira mão.',
       detalhes: [['Data', 'em definição'], ['Formato', 'bate e volta'], ['Roteiro e valores', 'em definição']],
       imagem: 'Letreiro de Angra dos Reis no Pier.png', video: 'WhatsApp Video 2026-11-08 at 23.08.20.mp4', videoHorizontal: null,
@@ -31,7 +30,6 @@ var RUMO = {
     },
     {
       id: 'ilha-do-mel', nome: 'Ilha do Mel', estado: 'PR',
-            local: 'Ilha do Mel, Paraná',
       descricao: 'Viagem adiada: o domingão na Ilha do Mel foi remarcado e estamos definindo a nova data. Sem carros, cercada de trilhas, praias e aquele clima de vila de pescadores.',
       detalhes: [['Nova data', 'em definição'], ['Saída', 'domingo às 00h30, de Sorocaba (SP)'], ['Retorno', 'domingo, balsa das 17h–18h'], ['Formato', 'bate e volta - Domingão na ilha']],
       imagem: 'ChatGPT Image 20 de set. de 2026, 03_36_58.png', video: null, videoHorizontal: null, textoDestaque: null,
@@ -40,7 +38,6 @@ var RUMO = {
     },
     {
       id: 'trindade', nome: 'Trindade & Paraty', estado: 'RJ',
-            local: 'Trindade & Paraty, Rio de Janeiro',
       descricao: null,
       detalhes: [['Data', 'em definição'], ['Roteiro e valores', 'em definição']],
       imagem: 'https://viajala.com.br/news/wp-content/uploads/2025/11/trindade-rj-o-que-fazer.jpg', video: null, videoHorizontal: null, textoDestaque: null,

@@ -33,9 +33,9 @@ var RUMO = {
       valor: 'R$ 499,90', status: 'adiada', roteiro: 'ilhadomel.html', ordem: 2, corTitulo: 'amarelo'
     },
     {
-      id: 'trindade', nome: 'Trindade', estado: 'RJ',
+      id: 'trindade', nome: 'Trindade & Paraty', estado: 'RJ',
       imagem: 'https://viajala.com.br/news/wp-content/uploads/2025/11/trindade-rj-o-que-fazer.jpg', video: null, videoHorizontal: null, textoDestaque: null,
-      saida: null, retorno: null, duracao: null, modalidade: null,
+      saida: null, retorno: null, duracao: 'Hospedagem', modalidade: null,
       valor: null, status: null, roteiro: null, ordem: 3
     }
   ]

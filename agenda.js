@@ -21,6 +21,9 @@ var RUMO = {
   destinos: [
     {
       id: 'angra-dos-reis', nome: 'Angra dos Reis', estado: 'RJ',
+            local: 'Angra dos Reis, Rio de Janeiro',
+      descricao: 'O próximo rumo da Rumo pelo Brasil é Angra dos Reis, no litoral sul do Rio de Janeiro. Ainda estamos definindo a data — fale com a gente para ser avisado em primeira mão.',
+      detalhes: [['Data', 'em definição'], ['Formato', 'bate e volta'], ['Roteiro e valores', 'em definição']],
       imagem: 'Letreiro de Angra dos Reis no Pier.png', video: 'WhatsApp Video 2026-11-08 at 23.08.20.mp4', videoHorizontal: null,
       textoDestaque: 'Nosso próximo rumo: um bate e volta em Angra dos Reis. Data, valores e roteiro em definição.',
       saida: null, retorno: null, duracao: 'BATE E VOLTA', modalidade: null,
@@ -28,12 +31,18 @@ var RUMO = {
     },
     {
       id: 'ilha-do-mel', nome: 'Ilha do Mel', estado: 'PR',
+            local: 'Ilha do Mel, Paraná',
+      descricao: 'Viagem adiada: o domingão na Ilha do Mel foi remarcado e estamos definindo a nova data. Sem carros, cercada de trilhas, praias e aquele clima de vila de pescadores.',
+      detalhes: [['Nova data', 'em definição'], ['Saída', 'domingo às 00h30, de Sorocaba (SP)'], ['Retorno', 'domingo, balsa das 17h–18h'], ['Formato', 'bate e volta - Domingão na ilha']],
       imagem: 'ChatGPT Image 20 de set. de 2026, 03_36_58.png', video: null, videoHorizontal: null, textoDestaque: null,
       saida: null, retorno: null, duracao: 'BATE E VOLTA', modalidade: 'bate e volta - Domingão na ilha',
       valor: 'R$ 499,90', status: 'adiada', roteiro: 'ilhadomel.html', ordem: 2, corTitulo: 'amarelo'
     },
     {
       id: 'trindade', nome: 'Trindade & Paraty', estado: 'RJ',
+            local: 'Trindade & Paraty, Rio de Janeiro',
+      descricao: null,
+      detalhes: [['Data', 'em definição'], ['Roteiro e valores', 'em definição']],
       imagem: 'https://viajala.com.br/news/wp-content/uploads/2025/11/trindade-rj-o-que-fazer.jpg', video: null, videoHorizontal: null, textoDestaque: null,
       saida: null, retorno: null, duracao: 'Hospedagem', modalidade: null,
       valor: null, status: null, roteiro: null, ordem: 3
@@ -83,9 +92,13 @@ var RUMO = {
     return esc(w.join(' ')) + '<span class="cor-' + (cor === 'vermelho' ? 'vermelho' : 'amarelo') + '">' + esc(ult) + '</span>';
   }
 
-  function card(d) {
+    function card(d) {
     var st = d.status && STATUS[d.status];
     var ancora = 'position:absolute;top:0;right:0;bottom:0;left:0;';
+    var det = d.detalhes || [];
+    var lista = det.map(function (x) { return '<div class="ag-item"><strong>' + esc(x[0]) + ':</strong> ' + esc(x[1]) + '</div>'; }).join('');
+    var temFormato = det.some(function (x) { return x[0] === 'Formato'; });
+    if (d.modalidade && !temFormato) lista += '<div class="ag-item"><strong>Formato:</strong> ' + esc(d.modalidade) + '</div>';
     var img = d.imagem ? "background-image:url('" + encodeURI(d.imagem) + "');" : '';
     return '<article class="ag-card">' +
       '<div class="ag-capa" style="position:relative;aspect-ratio:4/3;overflow:hidden;">' +
@@ -97,7 +110,9 @@ var RUMO = {
       '</div>' +
       '<div class="ag-corpo">' +
         '<div class="ag-tags"><span class="ag-tag ag-uf">' + esc(d.estado) + '</span>' + (d.duracao ? '<span class="ag-tag ag-dur">' + esc(d.duracao) + '</span>' : '') + '</div>' +
-        (d.modalidade ? '<div class="ag-item"><strong>Formato:</strong> ' + esc(d.modalidade) + '</div>' : '') +
+        '<div style="color:var(--verde);font-family:\'Geologica\',sans-serif;font-weight:700;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px;">' + esc(d.local || (d.nome + ', ' + d.estado)) + '</div>' +
+        (d.descricao ? '<p style="font-size:15px;line-height:1.7;color:var(--texto-suave);margin:0 0 16px;">' + esc(d.descricao) + '</p>' : '') +
+        (lista ? '<div style="margin-bottom:8px;">' + lista + '</div>' : '') +
         '<div class="ag-rodape">' +
           '<a class="ag-btn" href="' + link(d) + '"' + alvo(d) + '>Conhecer roteiro ' + SETA + '</a>' +
         '</div>' +

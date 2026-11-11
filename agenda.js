@@ -21,7 +21,7 @@ var RUMO = {
   destinos: [
     {
       id: 'angra-dos-reis', nome: 'Angra dos Reis', estado: 'RJ',
-      imagem: 'Letreiro de Angra dos Reis no Pier.png', video: 'snapinsta-1788302359004.mp4', videoHorizontal: null,
+      imagem: 'Letreiro de Angra dos Reis no Pier.png', video: 'WhatsApp Video 2026-11-08 at 23.08.20.mp4', videoHorizontal: null,
       textoDestaque: 'Nosso próximo rumo: um bate e volta em Angra dos Reis. Data, valores e roteiro em definição.',
       saida: null, retorno: null, duracao: 'BATE E VOLTA', modalidade: null,
       valor: null, status: null, roteiro: 'angra.html', ordem: 1, corTitulo: 'vermelho'
